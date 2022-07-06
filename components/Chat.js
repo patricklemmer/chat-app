@@ -1,7 +1,7 @@
 // React imports
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat';
+import { View, Platform, KeyboardAvoidingView } from 'react-native';
+import { GiftedChat, Bubble } from 'react-native-gifted-chat';
 
 export default class Chat extends React.Component {
   constructor() {
@@ -17,6 +17,7 @@ export default class Chat extends React.Component {
     let { name } = this.props.route.params;
     this.props.navigation.setOptions({ title: name });
 
+    // State sets static messages, system message and user message
     this.setState({
       messages: [
         {
@@ -29,6 +30,12 @@ export default class Chat extends React.Component {
             avatar: 'https://placeimg.com/140/140/any',
           },
         },
+        {
+          _id: 2,
+          text: 'You have entered the chat.',
+          createdAt: new Date(),
+          system: true,
+        },
       ],
     });
   }
@@ -37,6 +44,23 @@ export default class Chat extends React.Component {
     this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
+  }
+
+  //  Chat bubble customization
+  renderBubble(props) {
+    return (
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          left: {
+            backgroundColor: '#fafafa',
+          },
+          right: {
+            backgroundColor: '#f7c58b',
+          },
+        }}
+      />
+    );
   }
 
   render() {
@@ -49,12 +73,17 @@ export default class Chat extends React.Component {
     return (
       <View style={[{ backgroundColor: color }, { flex: 1 }]}>
         <GiftedChat
+          renderBubble={this.renderBubble.bind(this)}
           messages={this.state.messages}
           onSend={(messages) => this.onSend(messages)}
           user={{
             _id: 1,
           }}
         />
+        {/* Fix for: Android hiding message input field */}
+        {Platform.OS === 'android' ? (
+          <KeyboardAvoidingView behavior="height" />
+        ) : null}
       </View>
     );
   }
