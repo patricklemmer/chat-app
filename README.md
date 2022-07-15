@@ -4,7 +4,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]](https://github.com/patricklemmer/myFlix-Angular-client/issues)
+[![Issues][issues-shield]](https://github.com/patricklemmer/chat-app/issues)
 <!--[![MIT License][license-shield]][license-url]-->
 
 
@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/patricklemmer/myFlix-Angular-client">
+  <a href="https://github.com/patricklemmer/chat-app">
     <img src="https://github.com/patricklemmer/assets/blob/main/readme_icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -21,14 +21,14 @@
   <p align="center">
     The client side for a movie databse API, built with Angular.
     <br />
-    <a href="[https://github.com/patricklemmer/meet/](https://github.com/patricklemmer/myFlix-Angular-client)"><strong>Explore the docs »</strong></a>
+    <a href="[https://github.com/patricklemmer/meet/](https://github.com/patricklemmer/chat-app)"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/patricklemmer/myFlix-Angular-client/">View Project</a>
+    <a href="https://github.com/patricklemmer/chat-app/">View Project</a>
     ·
-    <a href="https://github.com/patricklemmer/myFlix-Angular-client/issues">Report Bug</a>
+    <a href="https://github.com/patricklemmer/chat-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/patricklemmer/myFlix-Angular-client/issues">Request Feature</a>
+    <a href="https://github.com/patricklemmer/chat-app/issues">Request Feature</a>
   </p>
 </div>
 
@@ -43,7 +43,6 @@
     <li><a href="#key-features">Key Features</a></li>
     <li><a href="#user-stories">User stories</a></li>
     <li><a href="#technical-requirements">Technical requirements</a></li>
-    <li><a href="#documentation">Documentation</a></li>
     <li><a href="#contributors">Contributors</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -56,17 +55,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this project is...<br><br>...to build the client-side for an application called myFlix based on
-its existing server-side code (REST API and database), with supporting
-documentation and using Angular.
+The objective of this project is...<br><br>...to build a chat app for mobile devices using React Native. The app will
+provide users with a chat interface and options to share images and their
+location.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ## Built With
 
-* ![](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-* ![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+* ![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+* ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+* ![](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -75,15 +75,12 @@ documentation and using Angular.
 
 <p>The following shows a list this apps key features:</p>
 
-- The app should display a welcome screen where users will be able to either log in or register an account.
-
-- After user authentication, the user should see all available movies
-
-- Each movie should contain additional information, so that a user can...
-
-  - view information about the movies director
-  
-  - view information about the movies genre
+- A page where users can enter their name and choose a background color for the chat screen
+before joining the chat.
+- A page displaying the conversation, as well as an input field and submit button.
+- The chat must provide users with two additional communication features: sending images
+and location data.
+- Data gets stored online and offline.
   
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -91,10 +88,16 @@ documentation and using Angular.
 <!-- User stories -->
 ## User stories
 
-- As a user, I want to be able to receive information on movies, directors, and genres so that I
-can learn more about movies I’ve watched or am interested in.
-
-- As a user, I want to be able to create a profile so I can save data about my favorite movies.
+- As a new user, I want to be able to easily enter a chat room so I can quickly start talking to my
+friends and family.
+- As a user, I want to be able to send messages to my friends and family members to exchange
+the latest news.
+- As a user, I want to send images to my friends to show them what I’m currently doing.
+- As a user, I want to share my location with my friends to show them where I am.
+- As a user, I want to be able to read my messages offline so I can reread conversations at any
+time.
+- As a user with a visual impairment, I want to use a chat app that is compatible with a screen
+reader so that I can engage with a chat interface.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -103,30 +106,22 @@ can learn more about movies I’ve watched or am interested in.
 <!-- Technical requirements -->
 ## Technical requirements
 
-- The application must be written in Angular (version 9 or later)
-- The application requires the latest version of Node.js and npm package
-- The application must contain user registration and login forms
-- The application must be designed using Angular Material
-- The application's codebase must contain comments using Typedoc
-- The project must contain technical documentation using JSDoc
-- The project must be hosted on GitHub Pages
+- The app must be written in React Native.
+- The app must be developed using Expo.
+- The app must be styled according to the given screen design.
+- Chat conversations must be stored in Google Firestore Database.
+- The app must authenticate users anonymously via Google Firebase authentication.
+- Chat conversations must be stored locally.
+- The app must let users pick and send images from the phone’s image library.
+- The app must let users take pictures with the device’s camera app, and send them.
+- The app must store images in Firebase Cloud Storage.
+- The app must be able to read the user’s location data.
+- Location data must be sent via the chat in a map view.
+- The chat interface and functionality must be created using the Gifted Chat library.
+- The app’s codebase must contain comments.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- Documentation -->
-## Documentation
-
-This app contains extensive documentation created by Compodoc. To view the docs in a browser, clone this repo and run npm run compodoc.
-````
-git clone https://github.com/patricklemmer/myFlix-Angular-client
-npm run compodoc
-````
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTORS -->
 ## Contributors
@@ -172,35 +167,6 @@ None
 <a href="mailto:patricklemmersa@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- 
-
-********** command overview **********
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
