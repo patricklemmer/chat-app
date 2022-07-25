@@ -15,7 +15,7 @@ import 'firebase/firestore';
 import PropTypes from 'prop-types';
 
 class CustomAction extends React.Component {
-  // Upload images to Firebase
+  // Upload images to Firebase storage
   uploadImageFetch = async (uri) => {
     const blob = await new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
@@ -44,15 +44,18 @@ class CustomAction extends React.Component {
     return await snapshot.ref.getDownloadURL();
   };
 
+  // Lets user pick image from camera roll, after permission was granted
   pickImage = async () => {
-    // Ask for permission
+    // Ask for permission to access camera roll
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     try {
+      // Open camera roll if permission is granted
       if (status === 'granted') {
         let result = await ImagePicker.launchImageLibraryAsync({
           mediaTypes: 'Images',
         }).catch((error) => console.log(error));
 
+        // If action is not cancelled, upload and send image
         if (!result.cancelled) {
           const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
@@ -63,15 +66,18 @@ class CustomAction extends React.Component {
     }
   };
 
+  // Lets user take image with device camera, after permission was granted
   takePhoto = async () => {
-    // Ask for permission
+    // Ask for permission to launch device camera
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
     try {
+      // Lauch camera if permission is granted
       if (status === 'granted') {
         let result = await ImagePicker.launchCameraAsync({
           mediaTypes: 'Images',
         }).catch((error) => console.log(error));
 
+        // If action is not cancelled, upload and send image
         if (!result.cancelled) {
           const imageUrl = await this.uploadImageFetch(result.uri);
           this.props.onSend({ image: imageUrl });
@@ -82,13 +88,16 @@ class CustomAction extends React.Component {
     }
   };
 
+  // Lets user share current location, after permission was granted
   getLocation = async () => {
-    // Ask for permission
+    // Ask for permission to access current location
     const { status } = await Location.requestForegroundPermissionsAsync();
     try {
+      // Get current location if permission is granted
       if (status === 'granted') {
         let result = await Location.getCurrentPositionAsync({});
 
+        // If location is found, share it
         if (result) {
           this.props.onSend({
             location: {
