@@ -9,12 +9,7 @@
 
 
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/patricklemmer/chat-app">
-    <img src="https://github.com/patricklemmer/assets/blob/main/readme_icon.png" alt="Logo" width="80" height="80">
-  </a>
+<!-- PROJECT INFO -->
 
 <h3 align="center">chat app</h3>
 
@@ -43,7 +38,7 @@
     <li><a href="#key-features">Key Features</a></li>
     <li><a href="#user-stories">User stories</a></li>
     <li><a href="#technical-requirements">Technical requirements</a></li>
-    <li><a href="#contributors">Contributors</a></li>
+    <li><a href="#how-to-run-this-project">How to run ths project</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -126,15 +121,42 @@ reader so that I can engage with a chat interface.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- CONTRIBUTORS -->
-## Contributors
+<!-- Project setup -->
+## How to run this project
 
-<table><tr><td align="center"><a href="https://patricklemmer.dev"><img src="https://github.com/patricklemmer/assets/blob/main/profile_image.png" width="100px;" alt="Patrick Lemmer"/><br /><sub><b>Patrick Lemmer</b></sub></a><br /><a href="https://github.com/patricklemmer/js_app/commits/master" title="Code">💻</a></td></tr>
-</table>
+1. Install Expo CLI globally 
+``
+npm install --global expo-cli
+``
+2. To run the app on your phone install the Expo app (from Google Play Store or App Store). To run the app on your computer install Android Studio (for Windows and Linux users) and/or IPhone Simulator from Xcode.
+3. Clone the repository 
+````
+git clone https://github.com/patricklemmer/chat-app.git
+````
+4. Install all dependencies
+``
+npm install
+``
+5. Run the app
+``
+expo start
+``
+6. Follow the Expo instructions in the terminal to run the app in the browser, in the Android emulator or the IPhone similator.
+
+_________________
+
+### Database setup
+
+1. Open Google Firebase
+2. Login with your Google account or create a new account
+3. Click on "Develop" on the menu, then select Cloud Firestore and create a database
+4. Follow the instructions to create a database
+5. Create a new collection and call it "messages"
+6. Naviagte to the projects settings and clicke the "Firestore for Web" button (it may be displayed like this: </>)
+7. A new screen opens asking you to register your web application to connect to the Cloud Firestore database you just created. Enter a name for your chat application and then click Register to generate the configuration code. Copy the contents of the firebaseConfig object and paste this configuration info into the firebaseConfig in Chat.js.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
