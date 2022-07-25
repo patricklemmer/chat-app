@@ -55,6 +55,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![Untitled design (3)](https://user-images.githubusercontent.com/101259134/180826879-03ed3dc0-f173-49ec-b489-56815525f443.png)
+
+
 The objective of this project is...<br><br>...to build a chat app for mobile devices using React Native. The app will
 provide users with a chat interface and options to share images and their
 location.
