@@ -14,7 +14,7 @@
 <h3 align="center">chat app</h3>
 
   <p align="center">
-    The client side for a movie databse API, built with Angular.
+    A React Native chat app.
     <br />
     <a href="[https://github.com/patricklemmer/meet/](https://github.com/patricklemmer/chat-app)"><strong>Explore the docs »</strong></a>
     <br />
